@@ -39,14 +39,10 @@
   ];
 
   function setLayout() {
-    // 각 스크롤 섹션의 높이 셋팅
-    for (let i = 0; i < sceneInfo.length; i++) {
-      sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
-      sceneInfo[
-        i
-      ].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
-    }
-
+    sceneInfo.forEach((scene) => {
+      scene.scrollHeight = scene.heightNum * window.innerHeight;
+      scene.objs.container.style.height = `${scene.scrollHeight}px`;
+    });
     console.log(sceneInfo);
   }
 
