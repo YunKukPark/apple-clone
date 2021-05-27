@@ -47,6 +47,19 @@
       scene.scrollHeight = scene.heightNum * window.innerHeight;
       scene.objs.container.style.height = `${scene.scrollHeight}px`;
     });
+
+    yOffset = window.pageYOffset;
+    let totalScrollHeight = 0;
+
+    for (let i = 0; i < sceneInfo.length; i++) {
+      totalScrollHeight += sceneInfo[i].scrollHeight;
+      if (totalScrollHeight >= yOffset) {
+        currentScene = i;
+        break;
+      }
+    }
+
+    document.body.setAttribute('id', `show-scene-${currentScene}`);
   }
 
   function scrollLoop() {
@@ -67,10 +80,10 @@
       if (currentScene === 0) return;
       currentScene--;
     }
-    console.log(currentScene);
+
+    document.body.setAttribute('id', `show-scene-${currentScene}`);
   }
 
-  window.addEventListener('resize', setLayout);
   window.addEventListener('scroll', () => {
     // 스크롤 하면 발생되는 이벤트
     // 현재 Scene 이 몇번째 Scene 인가 확인 해야 함
@@ -78,5 +91,6 @@
     scrollLoop();
   });
 
-  setLayout();
+  window.addEventListener('load', setLayout);
+  window.addEventListener('resize', setLayout);
 })();
