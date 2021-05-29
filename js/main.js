@@ -96,7 +96,6 @@
         scene.scrollHeight = scene.heightNum * window.innerHeight;
       } else if (scene.type === 'normal') {
         scene.scrollHeight = scene.objs.container.offsetHeight + window.innerHeight * 0.5;
-        console.log(scene.scrollHeight);
       }
       scene.objs.container.style.height = `${scene.scrollHeight}px`;
     });
@@ -197,7 +196,6 @@
         break;
 
       case 2:
-        console.log(scrollRatio);
         // console.log('2 play');
         if (scrollRatio <= 0.32) {
           // in
