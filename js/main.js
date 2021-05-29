@@ -95,15 +95,15 @@
       if (scene.type === 'sticky') {
         scene.scrollHeight = scene.heightNum * window.innerHeight;
       } else if (scene.type === 'normal') {
-        scene.scrollHeight = scene.objs.container.offsetHeight;
+        scene.scrollHeight = scene.objs.container.offsetHeight + window.innerHeight * 0.5;
         console.log(scene.scrollHeight);
       }
       scene.objs.container.style.height = `${scene.scrollHeight}px`;
     });
 
     yOffset = window.pageYOffset;
-    let totalScrollHeight = 0;
 
+    let totalScrollHeight = 0;
     for (let i = 0; i < sceneInfo.length; i++) {
       totalScrollHeight += sceneInfo[i].scrollHeight;
       if (totalScrollHeight >= yOffset) {
@@ -127,6 +127,7 @@
       const partScrollEnd = values[2].end * scrollHeight;
       const partScrollHeight = partScrollEnd - partScrollStart;
       const partScrollRatio = (currentYOffset - partScrollStart) / partScrollHeight;
+
       if (currentYOffset >= partScrollStart && currentYOffset <= partScrollEnd) {
         rv = partScrollRatio * (values[1] - values[0]) + values[0];
       } else if (currentYOffset < partScrollStart) {
@@ -196,6 +197,7 @@
         break;
 
       case 2:
+        console.log(scrollRatio);
         // console.log('2 play');
         if (scrollRatio <= 0.32) {
           // in
