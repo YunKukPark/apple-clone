@@ -105,3 +105,6 @@ dist
 
 # setting.json
 settings.json
+
+# DS.Store
+.DS_Store
