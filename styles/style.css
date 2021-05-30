@@ -83,7 +83,6 @@ p {
 
 /* Section - global */
 .scroll-section {
-  border: 3px solid hotpink;
   padding-top: 50vh;
 }
 
@@ -91,7 +90,10 @@ p {
 #scroll-section-0 h1 {
   font-size: 4rem;
   font-weight: 700;
+  top: -10vh;
   text-align: center;
+  position: relative;
+  z-index: 15;
 }
 
 .main-message {
@@ -205,7 +207,13 @@ p {
 
 .sticky-elem.sticky-elem-canvas {
   top: 0;
-  background-color: #eee;
+  height: 100%;
+}
+
+.sticky-elem-canvas canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 #show-scene-0 #scroll-section-0 .sticky-elem,
