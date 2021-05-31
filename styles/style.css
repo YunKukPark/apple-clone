@@ -143,6 +143,7 @@ p {
 }
 
 .desc-message {
+  opacity: 0;
   width: 50%;
   font-weight: 700;
 }
