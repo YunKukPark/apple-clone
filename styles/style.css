@@ -154,7 +154,6 @@ p {
   background-color: rgb(29, 29, 31);
 }
 
-/* Section - 3 */
 #scroll-section-2 .b {
   top: 10%;
   left: 40%;
@@ -163,6 +162,13 @@ p {
 #scroll-section-2 .c {
   top: 15%;
   left: 45%;
+}
+/* Section - 3 */
+
+#scroll-section-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mid-message {
@@ -177,6 +183,10 @@ p {
   display: block;
   color: rgb(29, 29, 31);
   font-weight: 700;
+}
+
+.image-blend-canvas {
+  background-color: #06f;
 }
 
 .canvas-caption {
